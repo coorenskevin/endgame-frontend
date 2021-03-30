@@ -1,16 +1,15 @@
 <template>
-  <div id="app">
-    <router-view/>
-  </div>
+    <NavHeader />
 </template>
 
 
 <script>
+import NavHeader from "@/NavHeader.vue"
 export default {
   components: {
+    NavHeader
   },
   mounted(){
-    this.$store.dispatch("getProducts");
   }
 }
 </script>
