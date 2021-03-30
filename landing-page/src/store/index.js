@@ -9,6 +9,7 @@ const headers = { Accept: "application/json" };
 export default new Vuex.Store({
   state: {
     products: [],
+    foodProducts: [],
     inCart: [],
     user: {
       isAuthenticated: false,
@@ -22,11 +23,23 @@ export default new Vuex.Store({
    },
    getters: {
     products: state => state.products,
+    foodProducts: state => state.foodProducts,
     inCart: state => state.inCart,
    },
    mutations: { //synchronous
      setProducts(state, payload) {
-       state.products = payload;
+       const foodProducts = [];
+       const products = [];
+       payload.forEach((prod) => {
+         if (prod.category == "food") {
+           foodProducts.push(prod);
+         } else {
+           products.push(prod);
+         }
+       });
+
+       state.products = products;
+       state.foodProducts = foodProducts;
      },
      addToCart(state, payload) {
       console.log(payload);
