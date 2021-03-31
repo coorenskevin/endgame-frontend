@@ -1,17 +1,15 @@
 <template>
-    <NavHeader />
+  <NavHeader />
 </template>
 
-
 <script>
-import NavHeader from "@/NavHeader.vue"
+import NavHeader from "@/NavHeader.vue";
 export default {
   components: {
-    NavHeader
+    NavHeader,
   },
-  mounted(){
-  }
-}
+  mounted() {},
+};
 </script>
 
 <style>

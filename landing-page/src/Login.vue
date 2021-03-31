@@ -15,20 +15,25 @@ export default {
     let payload = {
       name: name,
       email: email,
-      idToken: idToken
-    }
+      idToken: idToken,
+    };
 
-    if (name && email && idToken && name != '' && email != '' && idToken != '') {
+    if (
+      name &&
+      email &&
+      idToken &&
+      name != "" &&
+      email != "" &&
+      idToken != ""
+    ) {
       this.$store.commit("login", payload);
-    }
-    else {
+    } else {
       this.$store.commit("logout");
     }
 
     this.$router.push("/");
-  }
+  },
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

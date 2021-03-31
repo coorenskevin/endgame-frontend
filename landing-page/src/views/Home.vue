@@ -2,9 +2,7 @@
   <div class="container">
     <div class="container">
       <div class="row">
-        <Item v-for="product in products"
-        :key="product.id"
-        :item="product"/>
+        <Item v-for="product in products" :key="product.id" :item="product" />
       </div>
     </div>
   </div>
@@ -12,16 +10,16 @@
 
 <script>
 // @ is an alias to /src
-import Item from "@/Item.vue"
+import Item from "@/Item.vue";
 export default {
-  name: 'Home',
+  name: "Home",
   computed: {
     products() {
       return this.$store.state.products;
-    }
+    },
   },
   components: {
-    Item
-  }
-}
+    Item,
+  },
+};
 </script>

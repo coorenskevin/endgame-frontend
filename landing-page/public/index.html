@@ -1,62 +1,93 @@
 <!DOCTYPE html>
 <html lang="">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
     <!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      href="vendor/simple-line-icons/css/simple-line-icons.css"
+      rel="stylesheet"
+    />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
-    <link href="css/stylish-portfolio.min.css" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    />
+    <link href="css/stylish-portfolio.min.css" rel="stylesheet" />
 
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
-          rel="stylesheet" type="text/css">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <link
+      href="vendor/fontawesome-free/css/all.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
     <title><%= htmlWebpackPlugin.options.title %></title>
 
     <style>
-        body {
-            overflow-y:hidden;
-        }
+      section {
+        height: 100vh;
+      }
+      body {
+        overflow-y: hidden;
+      }
     </style>
   </head>
   <body>
     <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      <strong
+        >We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work
+        properly without JavaScript enabled. Please enable it to
+        continue.</strong
+      >
     </noscript>
     <!-- Navigation -->
     <a class="menu-toggle rounded" href="#">
-        <i class="fas fa-bars"></i>
+      <i class="fas fa-bars"></i>
     </a>
 
     <div id="custom-nav"></div>
 
     <!-- Header -->
     <header class="masthead d-flex" id="landing">
+      <div class="container text-center my-auto">
+        <img
+          src="img/logo.png"
+          class="img-fluid"
+          alt="Logo"
+          width="35%"
+          height="auto"
+        />
+        <h3 class="mb-5">
+          <p>Put your money where your heart is!</p>
+          <p>Empty our stocks and put together a Charity Box!</p>
+        </h3>
+        <img src />
 
-        <div class="container text-center my-auto">
-            <img src="img/logo.png" class="img-fluid" alt="Logo" width="35%" height="auto">
-            <h3 class="mb-5">
-                <p>Put your money where your heart is!</p>
-                <p>Empty our stocks and put together a Charity Box!</p>
-            </h3>
-            <img src>
-
-            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#foodAndDrinks">Put together a box!</a>
-        </div>
-        <div class="overlay"></div>
+        <a
+          class="btn btn-primary btn-xl js-scroll-trigger"
+          href="#foodAndDrinks"
+          >Put together a box!</a
+        >
+      </div>
+      <div class="overlay"></div>
     </header>
 
     <div id="foodAndDrinks"></div>
     <div id="schoolSupplies"></div>
 
     <div id="app"></div>
-
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
