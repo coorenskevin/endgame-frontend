@@ -30,7 +30,7 @@
         </div>
         <!-- /.row -->
         <div class="text-center">
-          <a class="btn btn-dark btn-xl js-scroll-trigger mr-2" href="#landing"
+          <a class="btn btn-dark btn-xl js-scroll-trigger mr-2" href="#chooseCharity"
             >Previous</a
           >
           <a

@@ -52,9 +52,6 @@ export default {
   },
   mounted() {
     this.$store.dispatch("getProducts");
-    let scrollScript = document.createElement('script')
-      scrollScript.setAttribute('src', 'js/stylish-portfolio.min.js')
-      document.head.appendChild(scrollScript)
   },
   computed: {
     products() {

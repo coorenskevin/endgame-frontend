@@ -40,7 +40,7 @@
         height: 100vh;
       }
       body {
-        overflow-y: hidden;
+        /**overflow-y: hidden;**/
       }
     </style>
   </head>
@@ -60,9 +60,10 @@
     <div id="custom-nav"></div>
 
     <!-- Header -->
-    <header class="masthead d-flex" id="landing">
-      <div class="container text-center my-auto">
-        <img
+    <header class="masthead d-flex pb-5" id="landing">
+      <div class="container text-center mt-auto">
+        <!--
+<img
           src="img/logo.png"
           class="img-fluid"
           alt="Logo"
@@ -74,15 +75,43 @@
           <p>Empty our stocks and put together a Charity Box!</p>
         </h3>
         <img src />
+        -->
 
         <a
-          class="btn btn-primary btn-xl js-scroll-trigger"
-          href="#foodAndDrinks"
-          >Put together a box!</a
+          class="btn btn-primary btn-xl js-scroll-trigger mt-auto"
+          href="#chooseCharity"
+          >Pick your charity</a
         >
       </div>
       <div class="overlay"></div>
     </header>
+
+    <!-- Callout -->
+    <section class="callout" id="chooseCharity">
+      <div class="container text-center">
+        <h2 class="mx-auto mb-5">
+          Choose
+          <em>your</em>
+          charity!
+        </h2>
+        <select class="custom-select mb-5">
+          <option disables selected>Select your charity</option>
+          <option>Amnesty International</option>
+          <option>Oxfam International</option>
+          <option>Save The Children</option>
+          <option>Unicef</option>
+          <option>Plan International</option>
+          <option>End Poverty Now</option>
+          <option>World Relief</option>
+        </select>
+        <a class="btn btn-primary btn-xl mr-2" href="#landing"
+          >Previous!</a
+        >
+        <a class="btn btn-primary btn-xl" href="#foodAndDrinks"
+          >Put together a box!</a
+        >
+      </div>
+    </section>
 
     <div id="foodAndDrinks"></div>
     <div id="schoolSupplies"></div>

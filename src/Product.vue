@@ -1,5 +1,5 @@
 <template>
-  <div class="col-lg-2 col-md-4 mb-2">
+  <div class="col-lg-2 col-md-4 mb-2" style="text-align:center;">
     <div class="card h-100">
       <a href="#"
         ><img class="card-img-top" :src="product.thumbnail_url" alt=""
@@ -8,11 +8,14 @@
         <h4 class="card-title">
           <a href="#">{{ product.title }}</a>
         </h4>
-        <h5>€{{ product.price }}</h5>
+        <h6 class="card-subtitle mb-2 remain">
+          {{ product.sold }} already sold
+        </h6>
         <p class="card-text">{{ product.description | shortDescription }}</p>
       </div>
       <div class="card-footer">
         <div class="form-inline">
+          <h5 class="mr-2">€{{ product.price }}</h5>
           <input
             type="number"
             class="form-control w-50 mr-2"

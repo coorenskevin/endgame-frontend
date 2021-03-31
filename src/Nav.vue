@@ -8,7 +8,9 @@ export default {
   components: {
     NavHeader,
   },
-  mounted() {},
+  mounted() {
+  
+  },
 };
 </script>
 
