@@ -3,7 +3,7 @@ import Vuex from "vuex";
 
 Vue.use(Vuex);
 
-const url = "http://localhost:8000/products";
+const url = "http://endgame-backend-git-ucllteam17.ocp-ucll-40cb0df2b03969eabb3fac6e80373775-0000.eu-de.containers.appdomain.cloud/api/products/all";
 const headers = { Accept: "application/json" };
 
 export default new Vuex.Store({
@@ -18,7 +18,7 @@ export default new Vuex.Store({
       idToken: "",
     },
     endpoints: {
-      login: "http://localhost:3000/login",
+      login: "http://endgame-authentication-ucllteam17.ocp-ucll-40cb0df2b03969eabb3fac6e80373775-0000.eu-de.containers.appdomain.cloud/login",
     },
   },
   getters: {
@@ -43,14 +43,15 @@ export default new Vuex.Store({
       state.foodProducts = foodProducts;
     },
     addToCart(state, payload) {
-      console.log("add to cart");
-
       let index = state.inCart.indexOf(payload);
       if(index == -1) {
         payload.orderQuantity = 1;
         state.inCart.push(payload);
       } else {
-        state.inCart[index].orderQuantity += 1;
+        console.log("update quantity");
+        let object = state.inCart[index];
+        
+        object.orderQuantity += 1;
         console.log(state.inCart[index]);
       }
     },
