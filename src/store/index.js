@@ -43,8 +43,16 @@ export default new Vuex.Store({
       state.foodProducts = foodProducts;
     },
     addToCart(state, payload) {
-      console.log(payload);
-      state.inCart.push(payload);
+      console.log("add to cart");
+
+      let index = state.inCart.indexOf(payload);
+      if(index == -1) {
+        payload.orderQuantity = 1;
+        state.inCart.push(payload);
+      } else {
+        state.inCart[index].orderQuantity += 1;
+        console.log(state.inCart[index]);
+      }
     },
     removeFromCart(state, item) {
       state.inCart.splice(item, 1);

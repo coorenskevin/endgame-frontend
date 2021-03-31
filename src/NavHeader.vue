@@ -87,6 +87,7 @@
               <tbody>
                 <tr v-for="(item, idx) in inCart" :key="idx">
                   <td>{{ item.title }}</td>
+                  <td>{{ item.orderQuantity }}</td>
                   <td>€{{ item.price }}</td>
                   <td>
                     <button
