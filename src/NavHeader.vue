@@ -14,10 +14,10 @@
           >
         </li>
         <li class="sidebar-nav-item">
-          <a class="js-scroll-trigger" href="#foodAndDrinks">Food and Drinks</a>
+          <a class="js-scroll-trigger" href="#foodsection">Food and Drinks</a>
         </li>
         <li class="sidebar-nav-item">
-          <a class="js-scroll-trigger" href="#schoolSupplies"
+          <a class="js-scroll-trigger" href="#schoolsection"
             >School Supplies</a
           >
         </li>

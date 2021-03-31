@@ -104,19 +104,74 @@
           <option>End Poverty Now</option>
           <option>World Relief</option>
         </select>
-        <a class="btn btn-primary btn-xl mr-2" href="#landing"
+        <a class="btn btn-primary btn-xl mr-2 js-scroll-trigger" href="#landing"
           >Previous!</a
         >
-        <a class="btn btn-primary btn-xl" href="#foodAndDrinks"
+        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#foodsection"
           >Put together a box!</a
         >
       </div>
     </section>
 
-    <div id="foodAndDrinks"></div>
-    <div id="schoolSupplies"></div>
+    <!-- Food and drinks -->
+    <section class="row content-section bg-light p-5" id="foodsection">
+      <div class="my-auto mx-auto">
+        <div class="container text-center">
+          <div class="row">
+            <div class="col-lg-10 mx-auto">
+              <h2>Food and Drinks</h2>
+              <p class="lead mb-5">
+                All of these products have an expiration date far away in the
+                future. This way people in need of food certainly won't eat
+                expired food.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="foodAndDrinks"></div>
+        <!-- /.row -->
+        <div class="text-center">
+          <a
+            class="btn btn-dark btn-xl js-scroll-trigger mr-2"
+            href="#chooseCharity"
+            >Previous</a
+          >
+          <a
+            class="btn btn-dark btn-xl js-scroll-trigger"
+            href="#schoolsection"
+            >Next</a
+          >
+        </div>
+      </div>
+    </section>
 
-    <div id="app"></div>
+    <!-- School supplies -->
+    <section
+      class="content-section bg-primary text-center p-5"
+      id="schoolsection"
+    >
+      <div class="my-auto mx-auto">
+        <div class="container text-center text-white">
+          <div class="row">
+            <div class="col-lg-10 mx-auto">
+              <h2>School Supplies</h2>
+              <p class="lead mb-5">
+                All of these products have an expire date far away in the
+                future. This way the people in need of the food will certainly
+                not eat expired food.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="schoolSupplies"></div>
+        <div class="text-center">
+          <a class="btn btn-dark btn-xl js-scroll-trigger" href="#foodsection"
+            >Previous</a
+          >
+          <!--  no next <a class="btn btn-dark btn-xl js-scroll-trigger" href="#callout">Next</a>-->
+        </div>
+      </div>
+    </section>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>

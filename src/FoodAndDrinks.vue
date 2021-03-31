@@ -1,21 +1,6 @@
 <template>
   <div id="foodAndDrinks">
-    <!-- Food and drinks -->
-    <section class="row content-section bg-light p-5" id="foodAndDrinks">
-      <div class="my-auto mx-auto">
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-lg-10 mx-auto">
-              <h2>Food and Drinks</h2>
-              <p class="lead mb-5">
-                All of these products have an expiration date far away in the
-                future. This way people in need of food certainly won't eat
-                expired food.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
+    <div class="row">
           <div class="col-lg-12">
             <div class="row d-flex justify-content-around">
               <Product
@@ -28,19 +13,6 @@
           </div>
           <!-- /.col-lg-9 -->
         </div>
-        <!-- /.row -->
-        <div class="text-center">
-          <a class="btn btn-dark btn-xl js-scroll-trigger mr-2" href="#chooseCharity"
-            >Previous</a
-          >
-          <a
-            class="btn btn-dark btn-xl js-scroll-trigger"
-            href="#schoolSupplies"
-            >Next</a
-          >
-        </div>
-      </div>
-    </section>
   </div>
 </template>
 

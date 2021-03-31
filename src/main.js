@@ -1,5 +1,4 @@
 import Vue from "vue";
-import App from "./App.vue";
 import Nav from "./Nav.vue";
 import FoodAndDrinks from "./FoodAndDrinks.vue";
 import SchoolSupplies from "./SchoolSupplies.vue";
@@ -31,8 +30,4 @@ new Vue({
   render: (h) => h(SchoolSupplies),
 }).$mount("#schoolSupplies");
 
-new Vue({
-  router,
-  store,
-  render: (h) => h(App),
-}).$mount("#app");
+
