@@ -61,7 +61,10 @@ export default new Vuex.Store({
       state.inCart.push(payload);
     },
     removeFromCart(state, item) {
-      state.inCart.splice(item, 1);
+      while(state.inCart.indexOf(item)!=-1){
+        state.inCart.splice(item, 1);
+      }
+
       if (state.inCart.length <= 0) {
         document.getElementById("showBoxLink").style.display = "none";
         document.getElementById("showBoxButton").style.display = "inline-block";

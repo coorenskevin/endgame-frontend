@@ -111,6 +111,9 @@ export default {
         return;
       }
     },
+    removeFromCart(item) {
+      this.$store.commit("removeFromCart", item);
+    },
   },
 };
 </script>
