@@ -3,7 +3,7 @@ import Vuex from "vuex";
 
 Vue.use(Vuex);
 
-var url;
+var url = "http://endgame-backend-git-ucllteam17.ocp-ucll-40cb0df2b03969eabb3fac6e80373775-0000.eu-de.containers.appdomain.cloud/api/products/all";
 const headers = { Accept: "application/json" };
 
 export default new Vuex.Store({

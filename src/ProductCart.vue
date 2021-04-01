@@ -6,13 +6,14 @@
       /></a>
       <div class="card-body">
         <h4 class="card-title">
-          <a href="#">{{ product.title }}</a>
+          <p>{{ product.title }}</p>
         </h4>
         <h6 class="card-subtitle mb-2 remain">
           {{ product.orderQuantity }} in cart
         </h6>
-        <p class="card-text">{{ product.description | shortDescription }}</p>
+        <p class="card-text">€{{ product.price  * product.orderQuantity }}</p>
         <button
+            style="position : absolute;bottom   : 5px;"
             class="btn btn-sm btn-danger"
             @click="removeFromCart(product)"
             onclick="showErrorMess()"

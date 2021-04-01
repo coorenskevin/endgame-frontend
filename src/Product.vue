@@ -6,7 +6,7 @@
       /></a>
       <div class="card-body">
         <h4 class="card-title">
-          <a href="#">{{ product.title }}</a>
+          <p>{{ product.title }}</p>
         </h4>
         <h6 class="card-subtitle mb-2 remain">
           {{ product.sold }} already sold
