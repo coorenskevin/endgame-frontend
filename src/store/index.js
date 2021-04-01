@@ -3,7 +3,7 @@ import Vuex from "vuex";
 
 Vue.use(Vuex);
 
-const url = "http://endgame-backend-git-ucllteam17.ocp-ucll-40cb0df2b03969eabb3fac6e80373775-0000.eu-de.containers.appdomain.cloud/api/products/all";
+var url;
 const headers = { Accept: "application/json" };
 
 export default new Vuex.Store({
@@ -20,7 +20,8 @@ export default new Vuex.Store({
       idToken: "",
     },
     endpoints: {
-      login: "http://endgame-authentication-ucllteam17.ocp-ucll-40cb0df2b03969eabb3fac6e80373775-0000.eu-de.containers.appdomain.cloud/login",
+      login: "http://localhost:3000/login",
+      products: "http://localhost:8000/api/products/all"
     },
   },
   getters: {
@@ -80,6 +81,12 @@ export default new Vuex.Store({
       state.user.email = payload.email;
       state.user.idToken = payload.idToken;
     },
+    setUrls(state) {
+      state.endpoints.login = process.env.VUE_APP_AUTH_URL;
+      state.endpoints.products = process.env.VUE_APP_PRODUCTS_URL;
+      url = state.endpoints.products;
+      console.log(process.env);
+    }
   },
   actions: {
     //asynchronous

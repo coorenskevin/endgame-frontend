@@ -9,7 +9,7 @@ export default {
     NavHeader,
   },
   mounted() {
-  
+    this.$store.commit("setUrls");
   },
 };
 </script>
