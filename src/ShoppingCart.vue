@@ -38,7 +38,7 @@
                 </tr>
                 <tr>
                   <th></th>
-                  <th>€€{{ total.toFixed(2) }}</th>
+                  <th>€{{ total.toFixed(2) }}</th>
                   <th></th>
                 </tr>
               </tbody>

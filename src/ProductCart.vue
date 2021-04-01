@@ -2,7 +2,7 @@
   <div class="col-lg-2 col-md-4 mb-2" style="text-align:center;">
     <div class="card h-100">
       <a href="#"
-      ><img class="card-img-top" :src="product.thumbnail_url" alt=""
+        ><img class="card-img-top" :src="product.thumbnail_url" alt=""
       /></a>
       <div class="card-body">
         <h4 class="card-title">
@@ -11,15 +11,19 @@
         <h6 class="card-subtitle mb-2 remain">
           {{ product.id | inCart }} in cart
         </h6>
-        <p class="card-text">€{{ product.price  * product.orderQuantity }}</p>
-        <button
+      </div>
+      <div class="card-footer">
+        <div class="form-inline">
+          <h5 class="">€{{ product.price * product.orderQuantity }}</h5>
+          <button
             style="position : absolute;bottom   : 5px;"
             class="btn btn-sm btn-danger"
             @click="removeFromCart(product)"
             onclick="showErrorMess()"
-        >
-          &times;
-        </button>
+          >
+            &times;
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -48,9 +52,7 @@ export default {
       this.$store.commit("removeFromCart", item);
     },
   },
-  computed: {
-    
-  }
+  computed: {},
 };
 </script>
 

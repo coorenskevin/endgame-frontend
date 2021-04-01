@@ -3,7 +3,8 @@ import Vuex from "vuex";
 
 Vue.use(Vuex);
 
-var url = "http://endgame-backend-git-ucllteam17.ocp-ucll-40cb0df2b03969eabb3fac6e80373775-0000.eu-de.containers.appdomain.cloud/api/products/all";
+var url =
+  "http://endgame-backend-git-ucllteam17.ocp-ucll-40cb0df2b03969eabb3fac6e80373775-0000.eu-de.containers.appdomain.cloud/api/products/all";
 const headers = { Accept: "application/json" };
 
 export default new Vuex.Store({
@@ -39,6 +40,7 @@ export default new Vuex.Store({
       const toyProducts = [];
       const products = [];
       payload.forEach((prod) => {
+        prod.inBasket = 0;
         if (prod.category == "food") {
           foodProducts.push(prod);
         } else if (prod.category == "school") {
@@ -60,10 +62,50 @@ export default new Vuex.Store({
       document.getElementById("showCart").style.display = "block";
       state.inCart.push(payload);
     },
-    removeFromCart(state, item) {
-      while(state.inCart.indexOf(item)!=-1){
-        state.inCart.splice(item, 1);
+    removeOneFromCart(state, item) {
+      //state.inCart.splice(item, 1);
+
+      for (var i = 0; i < state.inCart.length; i++) {
+        if (state.inCart[i].id === item.id) {
+          state.inCart.splice(i, 1);
+          break;
+        }
       }
+
+      if (state.inCart.length <= 0) {
+        document.getElementById("showBoxLink").style.display = "none";
+        document.getElementById("showBoxButton").style.display = "inline-block";
+        document.getElementById("showCart").style.display = "none";
+        document.getElementById("showCartAlert").style.display = "block";
+        document.getElementById("modalCloseButton").click();
+      }
+    },
+    removeFromCart(state, item) {
+
+      for (var i = 0; i < state.inCart.length; i++) {
+        if (state.inCart[i].id == item.id) {
+          state.inCart.splice(i, 1);
+          i = -1;
+        }
+      }
+
+      state.toyProducts.forEach((prod) => {
+        if (item.id == prod.id) {
+          prod.inBasket = 0;
+        }
+      });
+
+      state.schoolProducts.forEach((prod) => {
+        if (item.id == prod.id) {
+          prod.inBasket = 0;
+        }
+      });
+
+      state.foodProducts.forEach((prod) => {
+        if (item.id == prod.id) {
+          prod.inBasket = 0;
+        }
+      });
 
       if (state.inCart.length <= 0) {
         document.getElementById("showBoxLink").style.display = "none";

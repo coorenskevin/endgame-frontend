@@ -38,7 +38,7 @@
       type="text/css"
     />
     <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <title>CharityBox</title>
 
     <style>
       section {
@@ -46,6 +46,9 @@
       }
       .products-section {
         height: 100vh;
+      }
+      .card {
+        min-width: 282px;
       }
       body {
         overflow: hidden;
@@ -58,7 +61,7 @@
   <body>
     <noscript>
       <strong
-        >We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work
+        >We're sorry but CharityBox doesn't work
         properly without JavaScript enabled. Please enable it to
         continue.</strong
       >
@@ -100,7 +103,7 @@
     <!-- Callout -->
     <section class="content-section bg-primary text-center p-2 products-section" id="chooseCharity">
       <div class="container text-center text-white">
-        <div class="col-lg-10 mx-auto">
+        <div class="col-lg-10 mx-auto ml-0 mr-0">
           <img src="img/logoMainAgain.png" class="text-center h-50 w-50 pb-4">
           
           <h2>Welcome to Charity Box!</h2>
@@ -108,7 +111,6 @@
           <br>
           For us, these things aren’t any special but sadly this isn’t the case for everybody in this world.
           
-          <br>
           <br>
           We work together with a lot of other organizations that help us to get the Charity Box to the right place.
         <br>
@@ -164,7 +166,7 @@
         </div>
         <div id="foodAndDrinks"></div>
         <!-- /.row -->
-        <div class="text-center">
+        <div class="text-center mt-3">
           <a
             class="btn btn-dark btn-xl js-scroll-trigger mr-2"
             href="#chooseCharity"
@@ -195,8 +197,8 @@
           </div>
         </div>
         <div id="schoolSupplies"></div>
-        <div class="text-center">
-          <a class="btn btn-dark btn-xl js-scroll-trigger" href="#foodsection"
+        <div class="text-center  mt-3">
+          <a class="btn btn-dark btn-xl js-scroll-trigger mr-2" href="#foodsection"
             >Previous</a
           >
           <a class="btn btn-dark btn-xl js-scroll-trigger" href="#toysection"
@@ -224,7 +226,7 @@
         </div>
         <div id="toys"></div>
         <!-- /.row -->
-        <div class="text-center">
+        <div class="text-center mt-3">
           <a
             class="btn btn-dark btn-xl js-scroll-trigger mr-2"
             href="#schoolsection"
@@ -274,7 +276,7 @@
         </div>
         <div id="cart"></div>
         <div class="text-center">
-          <a class="btn btn-dark btn-xl js-scroll-trigger" href="#toysection"
+          <a class="btn btn-dark btn-xl js-scroll-trigger CharityBox" href="#toysection"
             >Previous</a
           >
           <!-- Button trigger modal -->
@@ -321,7 +323,17 @@
         $.jGrowl("The product has been deleted from your box.", {
           header: "Success!",
           life: 3000,
-          position: "top-right",
+          position: "top-left",
+          theme: "alert-styled-left bg-danger",
+        });
+      }
+
+      function showErrorMessOne() {
+        console.log("error");
+        $.jGrowl("The quantity for this product has been changed for box.", {
+          header: "Success!",
+          life: 3000,
+          position: "top-left",
           theme: "alert-styled-left bg-danger",
         });
       }

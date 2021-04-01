@@ -1,9 +1,8 @@
 <template>
   <div class="col-lg-2 col-md-4 mb-2" style="text-align:center;">
     <div class="card h-100">
-      <a href="#"
-        ><img class="card-img-top" :src="product.thumbnail_url" alt=""
-      /></a>
+        <img class="card-img-top" :src="product.thumbnail_url" alt=""
+      />
       <div class="card-body">
         <h4 class="card-title">
           <p>{{ product.title }}</p>
@@ -15,12 +14,21 @@
       </div>
       <div class="card-footer">
         <div class="form-inline">
-          <h5 class="mr-2">€{{ product.price }}</h5>
+          <h5 class="mr-4">€{{ product.price.toFixed(2) }}</h5>
+          <button
+            class="btn btn-danger mr-2"
+            :disabled="product.quantity === 0"
+            @click="removeOneFromCart(product)"
+            onclick="showErrorMessOne()"
+          >
+          <i class="fas fa-minus"></i>
+          </button>
           <input
             type="number"
-            class="form-control w-50 mr-2"
+            class="form-control w-25 mr-2"
+            disabled
             name="qty"
-            value="1"
+            :value= product.inBasket 
           />
           <button
             class="btn btn-success"
@@ -28,7 +36,7 @@
             @click="addToCart(product)"
             onclick="showMess()"
           >
-            <i class="fas fa-shopping-cart"></i>
+            <i class="fas fa-plus"></i>
           </button>
         </div>
       </div>
@@ -56,8 +64,15 @@ export default {
   },
   methods: {
     addToCart(product) {
+      product.inBasket += 1;
       this.$store.commit("addToCart", product);
     },
+    removeOneFromCart(product) {
+      if(product.inBasket>0) {
+          product.inBasket -= 1;
+          this.$store.commit("removeOneFromCart", product);
+      }
+    }
   },
 };
 </script>

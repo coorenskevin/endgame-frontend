@@ -3,36 +3,37 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="row d-flex justify-content-around">
-          
-          
-            <div class="col-lg-2 col-md-4 mb-2" style="text-align:center;" v-for="(item, idx) in inCart" :key="idx">
-              <div class="card h-100">
-                <a href="#"
-                  ><img class="card-img-top" :src="item.thumbnail_url" alt=""
-                /></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <p>{{ item.title }}</p>
-                  </h4>
-                  <h6 class="card-subtitle mb-2 remain">
-                    {{ item.orderQuantity }} in cart
-                  </h6>
-                  <p class="card-text">
-                    €{{ item.price * item.orderQuantity }}
-                  </p>
+          <div
+            class="col-lg-2 col-md-4 mb-2"
+            style="text-align:center;"
+            v-for="(item, idx) in inCart"
+            :key="idx"
+          >
+            <div class="card h-100">
+              <img class="card-img-top" :src="item.thumbnail_url" alt=""/>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <p>{{ item.title }}</p>
+                </h4>
+                <h6 class="card-subtitle mb-2 remain">
+                  {{ item.orderQuantity }} in cart
+                </h6>
+              </div>
+              <div class="card-footer">
+                <div class="row d-flex justify-content-around" style="align-items:center;">
+                  <h3 class="mb-0">€{{ (item.price * item.orderQuantity).toFixed(2) }}</h3>
                   <button
-                    style="position : absolute;bottom   : 5px;"
-                    class="btn btn-sm btn-danger"
+                    class="btn btn-danger"
+                    :disabled="item.quantity === 0"
                     @click="removeFromCart(item)"
                     onclick="showErrorMess()"
                   >
-                    &times;
+                    <i class="fas fa-trash-alt"></i>
                   </button>
                 </div>
               </div>
             </div>
-          
-
+          </div>
         </div>
         <!-- /.row -->
       </div>
