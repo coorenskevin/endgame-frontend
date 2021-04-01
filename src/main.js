@@ -3,6 +3,7 @@ import Nav from "./Nav.vue";
 import FoodAndDrinks from "./FoodAndDrinks.vue";
 import SchoolSupplies from "./SchoolSupplies.vue";
 import Toys from "./Toys.vue";
+import Cart from "./Cart.vue";
 import router from "./router";
 import store from "./store";
 import LoadScript from 'vue-plugin-load-script';
@@ -36,5 +37,11 @@ new Vue({
   store,
   render: (h) => h(Toys),
 }).$mount("#toys");
+
+new Vue({
+  router,
+  store,
+  render: (h) => h(Cart),
+}).$mount("#cart");
 
 

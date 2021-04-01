@@ -36,9 +36,15 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
 
     <style>
-      section {
+      .products-section {
         height: 100vh;
       }
+      body {
+          overflow-x: hidden;
+      }
+      /*#foodAndDrinks {
+          overflow-x: scroll;
+      }*/
     </style>
   </head>
   <body>
@@ -57,7 +63,7 @@
     <div id="custom-nav"></div>
 
     <!-- Header -->
-    <header class="masthead d-flex pb-5" id="landing">
+    <header class="masthead d-flex pb-5 products-section" id="landing">
       <div class="container text-center mt-auto">
         <!--
 <img
@@ -84,7 +90,7 @@
     </header>
 
     <!-- Callout -->
-    <section class="callout" id="chooseCharity">
+    <section class="callout products-section" id="chooseCharity">
       <div class="container text-center">
         <h2 class="mx-auto mb-5">
           Choose
@@ -115,7 +121,7 @@
     </section>
 
     <!-- Food and drinks -->
-    <section class="row content-section bg-light p-5" id="foodsection">
+    <section class="row content-section bg-light p-5 products-section" id="foodsection">
       <div class="my-auto mx-auto">
         <div class="container text-center">
           <div class="row">
@@ -146,7 +152,7 @@
 
     <!-- School supplies -->
     <section
-      class="content-section bg-primary text-center p-5"
+      class="content-section bg-primary text-center p-5 products-section"
       id="schoolsection"
     >
       <div class="my-auto mx-auto">
@@ -175,7 +181,7 @@
     </section>
 
     <!-- Toys -->
-    <section class="row content-section bg-light p-5" id="toysection">
+    <section class="row content-section bg-light p-5 products-section" id="toysection">
       <div class="my-auto mx-auto">
         <div class="container text-center">
           <div class="row">
@@ -193,17 +199,46 @@
             href="#schoolsection"
             >Previous</a
           >
-          <!-- Button trigger modal -->
-          <button
-            type="button"
-            class="btn btn-dark btn-xl"
-            data-toggle="modal"
-            data-target="#shoppingCart"
-          >
-            Go To Cart
-          </button>
+
+            <a class="btn btn-dark btn-xl js-scroll-trigger" href="#cartsection"
+            >Next</a
+            >
         </div>
       </div>
+    </section>
+
+    <!-- resume the cart -->
+    <section
+            class="content-section bg-primary text-center p-5"
+            id="cartsection"
+    >
+        <div class="my-auto mx-auto">
+            <div class="container text-center text-white">
+                <div class="row">
+                    <div class="col-lg-10 mx-auto">
+                        <h2>Your charity box !</h2>
+                        <p class="lead mb-5">
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div id="cart"></div>
+            <div class="text-center">
+                <a class="btn btn-dark btn-xl js-scroll-trigger" href="#toysection"
+                >Previous</a
+                >
+                <!-- Button trigger modal -->
+                <button
+                        type="button"
+                        class="btn btn-dark btn-xl"
+                        data-toggle="modal"
+                        data-target="#shoppingCart"
+                >
+                    Go To Cart
+                </button>
+            </div>
+        </div>
     </section>
 
     <!-- Bootstrap core JavaScript -->
