@@ -12,7 +12,7 @@
       <!-- /.col-lg-9 -->
     </div>
     <div>
-      <p>Total : €{{ total }}</p>
+      <h3 style="color:#45db27;">Total : €{{ total.toFixed(2) }}</h3>
     </div>
   </div>
 </template>
@@ -39,7 +39,7 @@ export default {
       return this.inCart.length;
     },
     total() {
-      return this.inCart.reduce((acc, cur) => acc + cur.price, 0);
+      return this.inCart.reduce((acc, cur) => acc + cur.price * cur.orderQuantity, 0);
     },
   },
   methods: {

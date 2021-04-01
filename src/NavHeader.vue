@@ -95,7 +95,7 @@
                 </tr>
                 <tr>
                   <th></th>
-                  <th>€{{ total }}</th>
+                  <th>€{{ total.toFixed(2) }}</th>
                   <th></th>
                 </tr>
               </tbody>
@@ -152,7 +152,7 @@ export default {
       return this.inCart.length;
     },
     total() {
-      return this.inCart.reduce((acc, cur) => acc + cur.price, 0);
+      return this.inCart.reduce((acc, cur) => acc + cur.price * cur.orderQuantity, 0);
     },
   },
   methods: {
