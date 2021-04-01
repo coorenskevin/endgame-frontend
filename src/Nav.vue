@@ -10,6 +10,7 @@ export default {
   },
   mounted() {
     this.$store.commit("setUrls");
+    this.$store.dispatch("getProducts");
   },
 };
 </script>

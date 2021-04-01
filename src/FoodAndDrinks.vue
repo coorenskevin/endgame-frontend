@@ -24,7 +24,7 @@ export default {
     Product,
   },
   mounted() {
-    this.$store.dispatch("getProducts");
+    
   },
   computed: {
     products() {
