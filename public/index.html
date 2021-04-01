@@ -36,6 +36,9 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
 
     <style>
+      section {
+        min-height: 100vh;
+      }
       .products-section {
         height: 100vh;
       }
@@ -102,7 +105,7 @@
           <p>You choose which one you want to help !</p>
         </h3>
         <select class="custom-select mb-5">
-          <option disables selected>Select your charity</option>
+          <option selected>We choose!</option>
           <option>Amnesty International</option>
           <option>Oxfam International</option>
           <option>Save The Children</option>
@@ -202,7 +205,7 @@
           >
 
             <a class="btn btn-dark btn-xl js-scroll-trigger" href="#cartsection"
-            >Next</a
+            >Show My Box</a
             >
         </div>
       </div>
@@ -217,7 +220,7 @@
             <div class="container text-center text-white">
                 <div class="row">
                     <div class="col-lg-10 mx-auto">
-                        <h2>Your charity box !</h2>
+                        <h2>My charity box !</h2>
                         <p class="lead mb-5">
 
                         </p>
