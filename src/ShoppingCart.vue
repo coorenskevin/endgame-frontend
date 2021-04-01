@@ -25,7 +25,7 @@
               <tbody>
                 <tr v-for="(item, idx) in inCart" :key="idx">
                   <td>{{ item.title }}</td>
-                  <td>${{ item.price }}</td>
+                  <td>€{{ item.price }}</td>
                   <td>
                     <button
                       class="btn btn-sm btn-danger"
@@ -37,7 +37,7 @@
                 </tr>
                 <tr>
                   <th></th>
-                  <th>${{ total }}</th>
+                  <th>€€{{ total.toFixed(2) }}</th>
                   <th></th>
                 </tr>
               </tbody>
