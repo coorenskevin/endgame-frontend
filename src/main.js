@@ -8,7 +8,7 @@ import router from "./router";
 import store from "./store";
 import App from "./App.vue";
 import LoadScript from 'vue-plugin-load-script';
-import 'bootstrap'
+import 'bootstrap';
  
 Vue.use(LoadScript);
 

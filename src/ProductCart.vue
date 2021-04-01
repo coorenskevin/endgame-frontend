@@ -9,7 +9,7 @@
           <p>{{ product.title }}</p>
         </h4>
         <h6 class="card-subtitle mb-2 remain">
-          {{ product.orderQuantity }} in cart
+          {{ product.id | inCart }} in cart
         </h6>
         <p class="card-text">€{{ product.price  * product.orderQuantity }}</p>
         <button
@@ -48,6 +48,9 @@ export default {
       this.$store.commit("removeFromCart", item);
     },
   },
+  computed: {
+    
+  }
 };
 </script>
 
