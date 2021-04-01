@@ -58,18 +58,7 @@ export default new Vuex.Store({
       document.getElementById("showBoxLink").style.display = "inline-block";
       document.getElementById("showCartAlert").style.display = "none";
       document.getElementById("showCart").style.display = "block";
-
-      let index = state.inCart.indexOf(payload);
-      if (index == -1) {
-        payload.orderQuantity = 1;
-        state.inCart.push(payload);
-      } else {
-        console.log("update quantity");
-        let object = state.inCart[index];
-
-        object.orderQuantity += 1;
-        console.log(state.inCart[index]);
-      }
+      state.inCart.push(payload);
     },
     removeFromCart(state, item) {
       state.inCart.splice(item, 1);

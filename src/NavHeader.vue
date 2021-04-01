@@ -6,26 +6,19 @@
           <a class="js-scroll-trigger" href="#page-top">{{ getUserName() }}</a>
         </li>
         <li class="sidebar-nav-item" style="display: none;" id="showCart">
-          <a
-            class=""
-            data-toggle="modal"
-            data-target="#shoppingCart"
-          >
-          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          <a class="" data-toggle="modal" data-target="#shoppingCart">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
             ( {{ numInCart }} )
           </a>
         </li>
         <li class="sidebar-nav-item disabled" id="showCartAlert">
-          <a
-            onclick="alert('Cart is still empty!');"
-          >
-          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          <a onclick="alert('Cart is still empty!');">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
             ( {{ numInCart }} )
           </a>
         </li>
 
-
-         <router-link
+        <router-link
           to="/"
           tag="li"
           v-if="!isAuthenticated"
@@ -34,7 +27,7 @@
         >
           <a @click="onLoginClicked" class="nav-link">Login</a>
         </router-link>
-        
+
         <li v-if="isAuthenticated" class="sidebar-nav-item">
           <a @click="onLogoutClicked" class="nav-link"
             >Logout {{ userEmail }}</a
@@ -60,7 +53,6 @@
         <li class="sidebar-nav-item">
           <a class="js-scroll-trigger" href="#toysection">Toys</a>
         </li>
-       
 
         <!--need next links?
       <li class="sidebar-nav-item">
@@ -135,7 +127,26 @@ export default {
       return this.$store.state.user.isAuthenticated;
     },
     inCart() {
-      return this.$store.getters.inCart;
+      console.log(this.$store.getters.inCart);
+      let cart = [];
+      let localCart = this.$store.getters.inCart;
+      console.log("beforeloop", localCart);
+
+      localCart.forEach(function(prop) {
+        console.log("loop ", prop);
+        let index = cart.indexOf(prop);
+        if (index == -1) {
+          prop.orderQuantity = 1;
+          cart.push(prop);
+        } else {
+          console.log("update quantity");
+          let object = cart[index];
+
+          object.orderQuantity += 1;
+        }
+      });
+
+      return cart;
     },
     numInCart() {
       return this.inCart.length;
