@@ -43,7 +43,7 @@
         height: 100vh;
       }
       body {
-          overflow-x: hidden;
+          overflow: hidden;
       }
       /*#foodAndDrinks {
           overflow-x: scroll;
@@ -203,10 +203,11 @@
             href="#schoolsection"
             >Previous</a
           >
-
-            <a class="btn btn-dark btn-xl js-scroll-trigger" href="#cartsection"
-            >Show My Box</a
-            >
+              <a class="btn btn-dark btn-xl js-scroll-trigger" href="#cartsection" style="display: none;" id="showBoxLink">Show My Box</a>
+            
+              <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Cart is empty!">
+                <button class="btn btn-dark btn-xl" style="pointer-events: none;" type="button" id="showBoxButton" disabled>Show My Box</button>
+              </span>
         </div>
       </div>
     </section>
@@ -245,6 +246,8 @@
         </div>
     </section>
 
+    <div id="app"></div>
+
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -254,5 +257,9 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/stylish-portfolio.min.js"></script>
+
+    <script>
+      $('[data-toggle="tooltip"]').tooltip()
+    </script>
   </body>
 </html>

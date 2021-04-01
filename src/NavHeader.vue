@@ -3,6 +3,44 @@
     <nav id="sidebar-wrapper" style="z-index:5">
       <ul class="sidebar-nav">
         <li class="sidebar-brand">
+          <a class="js-scroll-trigger" href="#page-top">{{ getUserName() }}</a>
+        </li>
+        <li class="sidebar-nav-item" style="display: none;" id="showCart">
+          <a
+            class=""
+            data-toggle="modal"
+            data-target="#shoppingCart"
+          >
+          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            ( {{ numInCart }} )
+          </a>
+        </li>
+        <li class="sidebar-nav-item disabled" id="showCartAlert">
+          <a
+            onclick="alert('Cart is still empty!');"
+          >
+          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            ( {{ numInCart }} )
+          </a>
+        </li>
+
+
+         <router-link
+          to="/"
+          tag="li"
+          v-if="!isAuthenticated"
+          class="sidebar-nav-item"
+          active-class="active"
+        >
+          <a @click="onLoginClicked" class="nav-link">Login</a>
+        </router-link>
+        
+        <li v-if="isAuthenticated" class="sidebar-nav-item">
+          <a @click="onLogoutClicked" class="nav-link"
+            >Logout {{ userEmail }}</a
+          >
+        </li>
+        <li class="sidebar-brand">
           <a class="js-scroll-trigger" href="#page-top">Charity box</a>
         </li>
         <li class="sidebar-nav-item">
@@ -17,54 +55,13 @@
           <a class="js-scroll-trigger" href="#foodsection">Food and Drinks</a>
         </li>
         <li class="sidebar-nav-item">
-          <a class="js-scroll-trigger" href="#schoolsection"
-            >School Supplies</a
-          >
+          <a class="js-scroll-trigger" href="#schoolsection">School Supplies</a>
         </li>
         <li class="sidebar-nav-item">
-          <a class="js-scroll-trigger" href="#toysection"
-          >Toys</a
-          >
+          <a class="js-scroll-trigger" href="#toysection">Toys</a>
         </li>
-        <router-link
-          to="/"
-          tag="li"
-          v-if="!isAuthenticated"
-          class="sidebar-nav-item"
-          active-class="active"
-        >
-          <a @click="onLoginClicked" class="nav-link">Login</a>
-        </router-link>
-        <li v-if="isAuthenticated" class="li-pointer nav-item">
-          <div class="dropdown">
-            <button
-              class="btn btn-secondary dropdown-toggle"
-              type="button"
-              id="dropdownMenuButton"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              {{ getUserName() }}
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Account Settings</a>
-              <a @click="onLogoutClicked" class="dropdown-item"
-                >Logout {{ userEmail }}</a
-              >
-            </div>
-          </div>
-        </li>
-        <li>
-          <button
-            class="btn btn-primary navbar-btn"
-            data-toggle="modal"
-            data-target="#shoppingCart"
-          >
-            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-            ( {{ numInCart }} )
-          </button>
-        </li>
+       
+
         <!--need next links?
       <li class="sidebar-nav-item">
           <a class="js-scroll-trigger" href="#portfolio">Portfolio</a>
@@ -83,7 +80,7 @@
               <i class="fa fa-shopping-cart" aria-hidden="true"></i>
               Shopping cart
             </h5>
-            <button class="close" data-dismiss="modal">
+            <button class="close" data-dismiss="modal" id="modalCloseButton">
               &times;
             </button>
           </div>

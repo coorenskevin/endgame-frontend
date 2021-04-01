@@ -6,6 +6,7 @@ import Toys from "./Toys.vue";
 import Cart from "./Cart.vue";
 import router from "./router";
 import store from "./store";
+import App from "./App.vue";
 import LoadScript from 'vue-plugin-load-script';
 import 'bootstrap'
  
@@ -43,5 +44,11 @@ new Vue({
   store,
   render: (h) => h(Cart),
 }).$mount("#cart");
+
+new Vue({
+  router,
+  store,
+  render: (h) => h(App),
+}).$mount("#app");
 
 

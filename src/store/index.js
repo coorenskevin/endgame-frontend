@@ -21,7 +21,7 @@ export default new Vuex.Store({
     },
     endpoints: {
       login: "http://localhost:3000/login",
-      products: "http://localhost:8000/api/products/all"
+      products: "http://localhost:8000/api/products/all",
     },
   },
   getters: {
@@ -41,9 +41,9 @@ export default new Vuex.Store({
       payload.forEach((prod) => {
         if (prod.category == "food") {
           foodProducts.push(prod);
-        } else if(prod.category == "school") {
+        } else if (prod.category == "school") {
           schoolProducts.push(prod);
-        } else if(prod.category == "toy") {
+        } else if (prod.category == "toy") {
           toyProducts.push(prod);
         }
       });
@@ -54,20 +54,32 @@ export default new Vuex.Store({
       state.toyProducts = toyProducts;
     },
     addToCart(state, payload) {
+      document.getElementById("showBoxButton").style.display = "none";
+      document.getElementById("showBoxLink").style.display = "inline-block";
+      document.getElementById("showCartAlert").style.display = "none";
+      document.getElementById("showCart").style.display = "block";
+
       let index = state.inCart.indexOf(payload);
-      if(index == -1) {
+      if (index == -1) {
         payload.orderQuantity = 1;
         state.inCart.push(payload);
       } else {
         console.log("update quantity");
         let object = state.inCart[index];
-        
+
         object.orderQuantity += 1;
         console.log(state.inCart[index]);
       }
     },
     removeFromCart(state, item) {
       state.inCart.splice(item, 1);
+      if (state.inCart.length <= 0) {
+        document.getElementById("showBoxLink").style.display = "none";
+        document.getElementById("showBoxButton").style.display = "inline-block";
+        document.getElementById("showCart").style.display = "none";
+        document.getElementById("showCartAlert").style.display = "block";
+        document.getElementById("modalCloseButton").click();
+      }
     },
     logout(state) {
       state.user.isAuthenticated = false;
@@ -86,7 +98,7 @@ export default new Vuex.Store({
       state.endpoints.products = process.env.VUE_APP_PRODUCTS_URL;
       url = state.endpoints.products;
       console.log(process.env);
-    }
+    },
   },
   actions: {
     //asynchronous

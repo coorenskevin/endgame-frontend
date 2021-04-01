@@ -8,6 +8,7 @@
 export default {
   name: "Login",
   mounted() {
+    console.log("mounted login");
     let name = this.$route.query.name;
     let email = this.$route.query.email;
     let idToken = this.$route.query.id_token;
@@ -26,6 +27,7 @@ export default {
       email != "" &&
       idToken != ""
     ) {
+      console.log("payload", payload);
       this.$store.commit("login", payload);
     } else {
       this.$store.commit("logout");

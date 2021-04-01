@@ -8,7 +8,6 @@
 export default {
   components: {},
   mounted() {
-    this.$store.dispatch("getProducts");
   },
 };
 </script>
