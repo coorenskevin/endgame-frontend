@@ -95,6 +95,7 @@
                     <button
                       class="btn btn-sm btn-danger"
                       @click="removeFromCart(item)"
+                      onclick="showErrorMess()"
                     >
                       &times;
                     </button>

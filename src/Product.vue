@@ -26,6 +26,7 @@
             class="btn btn-success"
             :disabled="product.quantity === 0"
             @click="addToCart(product)"
+            onclick="showMess()"
           >
             <i class="fas fa-shopping-cart"></i>
           </button>

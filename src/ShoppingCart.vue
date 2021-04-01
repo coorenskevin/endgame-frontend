@@ -28,6 +28,7 @@
                   <td>€{{ item.price }}</td>
                   <td>
                     <button
+                      onclick="showErrorMess()"
                       class="btn btn-sm btn-danger"
                       @click="removeFromCart(item)"
                     >
