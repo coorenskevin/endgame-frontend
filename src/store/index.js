@@ -10,6 +10,8 @@ export default new Vuex.Store({
   state: {
     products: [],
     foodProducts: [],
+    schoolProducts: [],
+    toyProducts: [],
     inCart: [],
     user: {
       isAuthenticated: false,
@@ -24,23 +26,31 @@ export default new Vuex.Store({
   getters: {
     products: (state) => state.products,
     foodProducts: (state) => state.foodProducts,
+    schoolProducts: (state) => state.schoolProducts,
+    toyProducts: (state) => state.toyProducts,
     inCart: (state) => state.inCart,
   },
   mutations: {
     //synchronous
     setProducts(state, payload) {
       const foodProducts = [];
+      const schoolProducts = [];
+      const toyProducts = [];
       const products = [];
       payload.forEach((prod) => {
         if (prod.category == "food") {
           foodProducts.push(prod);
-        } else {
-          products.push(prod);
+        } else if(prod.category == "school") {
+          schoolProducts.push(prod);
+        } else if(prod.category == "toy") {
+          toyProducts.push(prod);
         }
       });
 
       state.products = products;
       state.foodProducts = foodProducts;
+      state.schoolProducts = schoolProducts;
+      state.toyProducts = toyProducts;
     },
     addToCart(state, payload) {
       let index = state.inCart.indexOf(payload);

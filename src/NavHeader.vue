@@ -21,6 +21,11 @@
             >School Supplies</a
           >
         </li>
+        <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="#toysection"
+          >Toys</a
+          >
+        </li>
         <router-link
           to="/"
           tag="li"
